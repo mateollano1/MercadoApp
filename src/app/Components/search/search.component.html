@@ -1,1 +1,52 @@
-<p>search works!</p>
+<div class="container-fluid" style="background-color: #ffe600;">
+  <div class="row">
+    <div class="col-md-4 search">
+        <h4><span class="border border-secondary" style="padding: 1em;"><strong>Mercado Libre API</strong></span></h4>
+    </div>
+    <div class="col-md-4 search">
+      
+        <input class="form-control" type="search" (keyup.enter)="search(word.value)"  width="40%" placeholder="Ingresa el producto que deseas buscar...  " aria-label="Search" #word>
+      
+    </div>
+    <div class="col-md-1 search">
+      <button class="btn btn-outline" (click)="search(word.value)" style="background-color: #2d3277;" ><i
+          style="color: white;">Buscar</i></button>
+    </div>
+  </div>
+</div>
+<div class="col-md-12" style="text-align: center; margin-top: 5em;" *ngIf="loading">
+    <i class="fa fa-spinner fa-5x fa-spin "></i>
+</div>
+<div class="col-md-10" style="margin:3em; text-align: center;" *ngIf="!data">
+    <div class="alert alert-primary" role="alert">
+         <h5><strong>!Sin Productos!</strong></h5>
+         Actualmente no se encuentran productos relacionados a la palabra Ingresada.  
+      </div>
+</div>
+<div class="col-md-10" style="margin:3em; ">
+  <div class="card-columns">
+    <div class="card" *ngFor="let item of results | paginate: { itemsPerPage: 9, currentPage: p }; let i=index">
+      <div class="row no-gutters">
+        <div class="row" style="vertical-align: middle;">
+            <div class="col-md-4 mr-2" style="margin: 1em;">
+                <img src="{{item.thumbnail}}" class="card-img-top">
+              </div>
+              <div class="col-md-6" style="vertical-align: middle; text-align: center; margin-top: 1em;">
+                  <h6 class="card-title">{{item.title}}</h6>
+              </div>
+        </div>
+        
+
+        <div class="card-body">
+          <h6><strong>Vendedor: </strong></h6>
+          <h6><strong>Precio: </strong>$ {{item.price}}</h6>
+            
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col" style="text-align: center;">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
