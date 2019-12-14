@@ -14,4 +14,9 @@ export class MLApiService {
       return data;
     }));
   }
+  getSeller(idSeller: string){
+    return this.http.get(`https://api.mercadolibre.com/users/${idSeller}`).pipe(map((data: any) => {
+      return data;
+    }));
+  }
 }

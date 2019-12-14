@@ -1,6 +1,11 @@
-.search{
+.search {
     margin-top: 3em;
     margin-bottom: 3em;
     text-align: center;
+}
 
+.down {
+    position: absolute;
+    bottom: 0px;
+    margin: 2em;
 }
