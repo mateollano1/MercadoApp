@@ -9,7 +9,7 @@ export class MLApiService {
   configUrl = "https://api.mercadolibre.com/sites/MCO/search?q="
   constructor(private http: HttpClient) { }
   getItems(item: string, offset:number) {
-    console.log(`${this.configUrl}${item}`)
+    // console.log(`${this.configUrl}${item}`)
     return this.http.get(`${this.configUrl}${item}&offset=${offset}`).pipe(map((data: any) => {
       return data;
     }));

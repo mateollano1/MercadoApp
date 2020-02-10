@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
   search(event: any) {
-    console.log(event);
+    // console.log(event);
     
     this.word = event
     this.searchItem(0)
@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit {
     this.mlService.getItems(this.word,offset).subscribe(data => {
       this.results = data['results']
       
-      console.log(data);
+      // console.log(data);
       this.totalItemsPagination = data['paging']['total']
       
       this.loading = false  
@@ -64,7 +64,7 @@ export class SearchComponent implements OnInit {
 
   pageChanged(event:any){
     this.p = event
-    console.log(event);
+    // console.log(event);
     this.searchItem((event - 1) * 50)
     window.scroll(0, 0);
   }
