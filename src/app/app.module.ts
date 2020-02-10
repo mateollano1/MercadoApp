@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PaginationComponent } from './Components/pagination/pagination.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    PaginationComponent
+    PaginationComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

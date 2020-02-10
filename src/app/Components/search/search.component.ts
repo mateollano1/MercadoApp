@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MLApiService } from 'src/app/Services/mlapi.service';
+import { Product } from 'src/app/Models/product';
 
 @Component({
   selector: 'app-search',
@@ -7,7 +8,7 @@ import { MLApiService } from 'src/app/Services/mlapi.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  results: any[]
+  results: Product[]
   sellers: any[]
   shipping: boolean[] = []
   word: string = ""
@@ -20,18 +21,21 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   }
-  search(word: string) {
-    this.word = word
+  search(event: any) {
+    console.log(event);
+    
+    this.word = event
     this.searchItem(0)
   }
   searchItem(offset: number){
     this.clearData()
     this.mlService.getItems(this.word,offset).subscribe(data => {
       this.results = data['results']
+      
       console.log(data);
       this.totalItemsPagination = data['paging']['total']
       
-      this.loading = false
+      this.loading = false  
       if (this.results.length === 0) {
         this.data = false
         this.paginate = false

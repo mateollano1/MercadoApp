@@ -1,0 +1,16 @@
+<div class="container-fluid navColor">
+    <div class="row">
+        <div class="col-md-4 search">
+            <h4><span class="border border-secondary" style="padding: 1em;"><strong>Mercado Libre API</strong></span></h4>
+        </div>
+        <div class="col-xs-8 search">
+
+            <input class="form-control size" type="search" (keyup.enter)="search(word.value)" placeholder="Ingresa el producto ...  " aria-label="Search" #word>
+
+        </div>
+        <div class="col-xs-4 search searchColor">
+            <button class="btn btn-outline" (click)="search(word.value)"><i
+          style="color: white;">Buscar</i></button>
+        </div>
+    </div>
+</div>

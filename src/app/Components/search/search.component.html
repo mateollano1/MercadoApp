@@ -1,23 +1,8 @@
-<div class="container-fluid navColor">
-    <div class="row">
-        <div class="col-md-4 search">
-            <h4><span class="border border-secondary" style="padding: 1em;"><strong>Mercado Libre API</strong></span></h4>
-        </div>
-        <div class="col-xs-8 search">
-
-            <input class="form-control size" type="search" (keyup.enter)="search(word.value)" placeholder="Ingresa el producto ...  " aria-label="Search" #word>
-
-        </div>
-        <div class="col-xs-4 search searchColor">
-            <button class="btn btn-outline" (click)="search(word.value)"><i
-          style="color: white;">Buscar</i></button>
-        </div>
-    </div>
-</div>
+<app-navbar (word)=search($event)></app-navbar>
 
 
 <div class="col-md-10 searchContent">
-    <h5 class="results" *ngIf="paginate"><strong> Resultados para "<i>{{word.value}}</i></strong>"</h5>
+    <h5 class="results" *ngIf="paginate"><strong> Resultados para "<i>{{word}}</i></strong>"</h5>
     <div class="card-columns">
         <div class="card shadow card-height" *ngFor="let item of results | paginate: { itemsPerPage: 50, currentPage: p, totalItems: totalItemsPagination }; let i=index;">
             <div class="row no-gutters">

@@ -8,4 +8,5 @@ export class Product {
     price: number;
     thumbnail: string;
     shipping: Shipping;
+    permalink: string
 }
