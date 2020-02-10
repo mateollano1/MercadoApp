@@ -53,7 +53,4 @@
         Actualmente no se encuentran productos relacionados a la palabra Ingresada.
     </div>
 </div>
-<div class="col" style="text-align: center;" *ngIf="paginate">
-    <pagination-controls responsive="true" (pageChange)="pageChanged($event) " style="margin: 2em;">
-    </pagination-controls>
-</div>
+<app-pagination (currentPage)="pageChanged($event)" *ngIf="paginate"></app-pagination>

@@ -41,6 +41,7 @@ export class SearchComponent implements OnInit {
     })
   }
   clearData(){
+    this.paginate = false
     this.data = true;
     this.loading = true
     this.results = []
