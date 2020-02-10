@@ -8,9 +8,9 @@ import { map } from 'rxjs/operators';
 export class MLApiService {
   configUrl = "https://api.mercadolibre.com/sites/MCO/search?q="
   constructor(private http: HttpClient) { }
-  getItems(item: string) {
+  getItems(item: string, offset:number) {
     console.log(`${this.configUrl}${item}`)
-    return this.http.get(`${this.configUrl}${item}`).pipe(map((data: any) => {
+    return this.http.get(`${this.configUrl}${item}&offset=${offset}`).pipe(map((data: any) => {
       return data;
     }));
   }
