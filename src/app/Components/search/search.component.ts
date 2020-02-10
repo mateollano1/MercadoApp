@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   loading: boolean = false
   data: boolean = true
   p: number = 1
+  initial: boolean = true
   totalItemsPagination: number = 0
   constructor(private mlService: MLApiService) { }
 
@@ -23,9 +24,11 @@ export class SearchComponent implements OnInit {
   }
   search(event: any) {
     // console.log(event);
+    if(event !== ''){
+      this.word = event
+      this.searchItem(0)
+    }
     
-    this.word = event
-    this.searchItem(0)
   }
   searchItem(offset: number){
     this.clearData()
@@ -45,6 +48,7 @@ export class SearchComponent implements OnInit {
     })
   }
   clearData(){
+    this.initial = false
     this.paginate = false
     this.data = true;
     this.loading = true

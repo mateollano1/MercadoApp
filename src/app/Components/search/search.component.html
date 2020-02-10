@@ -38,4 +38,10 @@
         Actualmente no se encuentran productos relacionados a la palabra Ingresada.
     </div>
 </div>
+<div class="col-md-10 alertProducts" *ngIf="initial">
+    <div class="alert alert-primary" role="alert">
+        <h5><strong>!Ingresa un Producto!</strong></h5>
+        Ingresa el producto que deseas consultar.
+    </div>
+</div>
 <app-pagination (currentPage)="pageChanged($event)" *ngIf="paginate"></app-pagination>
