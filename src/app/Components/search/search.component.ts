@@ -37,6 +37,10 @@ export class SearchComponent implements OnInit {
       
       // console.log(data);
       this.totalItemsPagination = data['paging']['total']
+      if (this.totalItemsPagination > 1000) {
+        this.totalItemsPagination = 1000
+        
+      }
       
       this.loading = false  
       if (this.results.length === 0) {

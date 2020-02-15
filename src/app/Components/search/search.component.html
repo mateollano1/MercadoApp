@@ -8,7 +8,7 @@
             <div class="row no-gutters">
                 <div class="row" style="vertical-align: middle;">
                     <div class="col-md-4 mr-2" style="margin: 1em;">
-                        <img src="{{item.thumbnail}}" class="card-img-top size-img">
+                        <img src="{{item.thumbnail}}" class="shadow p-3 card-img-top size-img">
                     </div>
                     <div class="col-md-6 title">
                         <h6 class="card-title">{{item.title}}</h6>
@@ -34,13 +34,13 @@
 </div>
 <div class="col-md-10 alertProducts" *ngIf="!data">
     <div class="alert alert-primary" role="alert">
-        <h5><strong>!Sin Productos!</strong></h5>
+        <h5><strong>¡Sin Productos!</strong></h5>
         Actualmente no se encuentran productos relacionados a la palabra Ingresada.
     </div>
 </div>
 <div class="col-md-10 alertProducts" *ngIf="initial">
     <div class="alert alert-primary" role="alert">
-        <h5><strong>!Ingresa un Producto!</strong></h5>
+        <h5><strong>¡Ingresa un Producto!</strong></h5>
         Ingresa el producto que deseas consultar.
     </div>
 </div>
