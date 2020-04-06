@@ -1,27 +1,17 @@
-# MercadoApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+# MercadoApp
+Web project developed in Angular 8.0.3.
+The project uses the Mercado libre API to search products and show relevant information about it.
+
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Current Results
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Desktop view
+![enter image description here](https://i.ibb.co/rbrfcB3/Captura-de-pantalla-de-2020-04-06-16-46-04.png)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Mobile view
+![enter image description here](https://i.ibb.co/BqjjtQV/Captura-de-pantalla-de-2020-04-06-16-46-22.png)
